@@ -6,7 +6,7 @@ export async function routeHandler(request, response){
     })
 
     if(route){
-        return route.controller(request, response)
+        return route.controller({request, response})
     } 
     return response.writeHeader(404).end("Not Found")
 }
