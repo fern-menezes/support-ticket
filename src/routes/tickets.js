@@ -4,6 +4,6 @@ export const tickets = [
         path: "/tickets",
         controller: (request, response) => {
             response.end("Criado com sucesso!")
-        }
-    }
+        },
+    },
 ]
