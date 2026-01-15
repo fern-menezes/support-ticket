@@ -6,4 +6,11 @@ export const tickets = [
         path: "/tickets",
         controller: create,
     },
+
+     {
+        method: "GET",
+        path: "/tickets",
+        controller: create,
+    },
+
 ]
