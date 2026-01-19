@@ -3,9 +3,7 @@ import fs from "node:fs/promises"
 const DATABASE_PATH = new URL('./db.json', import.meta.url);
 
 export class Database {
-    #database = {
-
-    }
+    #database = {}
 
     constructor() {
         fs.readFile(DATABASE_PATH, "utf8").then((data) => { this.#database = JSON.parse(data) }).catch(() => { this.#persist() })
@@ -25,7 +23,7 @@ export class Database {
         return data
     }
 
-    select(table){
+    select(table) {
         let data = this.#database[table] ?? []
         return data
     }
