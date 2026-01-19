@@ -1,4 +1,7 @@
+export function update({response, request, database}){
+    const { id } = request.params;
+    const {equipment, description } = request.body;
 
-export function update({ request, response, database }){
-   
+    console.log(id)
+    return response.end();
 }

@@ -31,10 +31,7 @@ export class Database {
                return Object.entries(filters).some(([key, value]) => {
                     return row[key].toLowerCase().includes(value.toLowerCase())
                 })
-                //console.log(test)
-            })
-
-            
+            })  
         }
         return data
     }

@@ -12,12 +12,15 @@ export async function routeHandler(request, response){
 
     if(route){
         const routeParams = request.url.match(route.path)
-        const { query } = routeParams.groups
-        console.log(extractQueryParams(query))
+        const { query, ...params } = routeParams.groups
+        
 
+        request.params = params
         request.query = query ? extractQueryParams(query) : {}
 
         return route.controller({request, response, database})
-    } 
-    return response.writeHeader(404).end("Not Found")
+    } else{
+        response.writeHead(404, { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify({ message: '❌ Route not found' }));
+    }
 }
