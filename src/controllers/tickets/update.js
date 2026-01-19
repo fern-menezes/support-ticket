@@ -7,5 +7,5 @@ export function update({response, request, database}){
         description,
         updated_at: new Date()
     })
-    return response.end();
+    return response.end("Ticket atualizado com sucesso!");
 }
