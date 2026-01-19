@@ -2,6 +2,10 @@ export function update({response, request, database}){
     const { id } = request.params;
     const {equipment, description } = request.body;
 
-    console.log(id)
+    database.update("tickets", id, {
+        equipment, 
+        description,
+        updated_at: new Date()
+    })
     return response.end();
 }
